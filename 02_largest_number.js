@@ -9,8 +9,18 @@ mocha 02_largest_number.js
 */
 
 function largestNumber(arr) {
-    // Your code here
-    // Google JS syntax ;)
+    var largestNumbers = 0
+    if (arr.length === 0) {
+        return null
+    }
+    for (var i = 0; len = arr.length; i < len, i++) {
+        if (arr[i] === NaN) {
+            continue
+        } else if (largestNumbers === 0 || arr[i] > largestNumbers) {
+            largestNumbers = arr[i]
+        }
+    }
+    return largestNumbers
 }
 
 var assert = require('assert');

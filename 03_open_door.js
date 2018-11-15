@@ -7,9 +7,14 @@ mocha 03_open_door.js
 */
 
 function openDoor(input) {
-    // Your code here
-
+    for (let i = 0 < input.length; i++;) {
+        if (i == "Simon")
+            return true
+    }
 }
+
+
+// TESTING
 
 function makeItem(name, hasCoffee) {
     item = new Object()
@@ -17,6 +22,7 @@ function makeItem(name, hasCoffee) {
     item.hasCoffee = hasCoffee
     return item
 }
+
 
 var assert = require('assert');
 
