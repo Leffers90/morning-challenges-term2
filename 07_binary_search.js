@@ -17,9 +17,27 @@ Example:
 */
 
 function binarySearch(sortedArray, searchValue) {
-    // Your code here
+    let count = 0;
+    let arrayEnd = sortedArray.length;
+    let arrayStart = 0;
+
+
+    for (let num of sortedArray) {
+        count += 1
+        let arrayMid = Math.floor((arrayStart + arrayEnd) / 2);
+        if (sortedArray[arrayMid] == searchValue) {
+            return [arrayMid, count]
+        } else if (sortedArray[arrayMid] < searchValue) {
+            arrayStart = arrayMid
+            arrayMid = Math.floor((arrayStart + arrayEnd) / 2);
+        } else {
+            arrayEnd = arrayMid
+            arrayMid = Math.floor((arrayStart + arrayEnd) / 2);
+        }
+    }
 }
 
+// TESTING
 
 let assert = require('assert')
 
