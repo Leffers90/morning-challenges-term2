@@ -12,20 +12,32 @@ Because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and 1*2 = 2
 */
 
 function persistence(num) {
-    //enter code here
+    let count = 0
+    while (num > 9) {
+        count++
+        num = num.toString(10).split('');
+        num = num.reduce((a, b) => a * b);
+        // take the num
+        // let num = num.split the number into single integers and multiply them by themselves
+        // let num = num. continue this process until num < 10
+    }
+    return count
 }
 
 
+
+
+// TESTING
 var assert = require('assert');
 
 describe('Initial Tests', function () {
-    it('Should return a single digit number', function() {
-        assert.equal(persistence(39),3);
-        assert.equal(persistence(25),2);
-        assert.equal(persistence(999),4);
+    it('Should return a single digit number', function () {
+        assert.equal(persistence(39), 3);
+        assert.equal(persistence(25), 2);
+        assert.equal(persistence(999), 4);
     })
-    it('Should return zero if num is a one digit number', function() {
-        assert.equal(persistence(4),0);
-        assert.equal(persistence(9),0);
+    it('Should return zero if num is a one digit number', function () {
+        assert.equal(persistence(4), 0);
+        assert.equal(persistence(9), 0);
     })
 });
