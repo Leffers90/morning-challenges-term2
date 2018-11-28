@@ -24,6 +24,7 @@ function binaryToDecimal(binaryNumber) {
     }
     return result
 }
+// foo
 
 
 
