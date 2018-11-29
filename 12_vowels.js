@@ -14,19 +14,37 @@ mocha 12_vowels.js
 
 
 
-function vowels (string) {
-    // Your code here
+function vowels(string) {
+    // let arr = string.split('');
+    // let result = []
+    // for (let i = 0; i < arr; i++) {
+    //     if (arr[i] == 'e', 'u', 'i', 'o', 'a')
+    //         result.push(arr[i]);
+    // }
+    // return result
+
+    let result = []
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    for (let letter of string) {
+        if (vowels.includes(letter)) {
+            result.push(letter)
+        }
+    }
+    return result
 }
 
 
+
+
+// TESTING
 var assert = require('assert');
 
-describe('vowels', function() {
-    it('Should return the vowels from a string', function() {
-        assert.deepEqual(vowels("The quick brown fox"), ["e","u","i","o","o"]);
-        assert.deepEqual(vowels("Hello World"), ["e","o","o"]);
+describe('vowels', function () {
+    it('Should return the vowels from a string', function () {
+        assert.deepEqual(vowels("The quick brown fox"), ["e", "u", "i", "o", "o"]);
+        assert.deepEqual(vowels("Hello World"), ["e", "o", "o"]);
     })
-    it('Test vowels casing', function() {
-        assert.deepEqual(vowels("cAse tEst"), ["A","e","E"])
+    it('Test vowels casing', function () {
+        assert.deepEqual(vowels("cAse tEst"), ["A", "e", "E"])
     })
 })
